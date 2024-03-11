@@ -85,7 +85,6 @@ const relatedAsset: React.FC<realtedAssetProp> = ({ assetCount }) => {
               </Button>
             </div>
           </div>
-        {/* </div> */}
       </Modal>
       )}
     <div className="p-8 w-4/5 absolute xl:left-32 sm:left-32 left-12 mt-44 xl:mt-28">

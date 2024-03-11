@@ -5,7 +5,6 @@ import { messageData } from "../Context";
 import { useContext } from "react";
 
 const BookMark = () => {
-  //   let items: string[] = ["a", "b", "c"];
   const [items, setItems] = useState<string[]>([]);
   const [cat, setCat] = useState(0);
   const [addC, setAddC] = useState("");
@@ -18,8 +17,6 @@ const BookMark = () => {
     setCat(0);
   }
   return (
-    // <div className="z-10 bg-white">
-    // </div>
     <div className="inset-0 flex items-center justify-center">
       {cat ? (
         <Modal isOpen={modalState2} onClose={() => setCat(0)} size="sm">
@@ -56,36 +53,6 @@ const BookMark = () => {
           </div>
         </Modal>
       ) : (
-        // <div className="p-4 md:w-1/4 w-64 border-slate-300 bg-white border absolute rounded-sm md:left-112 top-32">
-        //     <p className="md:text-xl text-sm">Add New Bookmark Category</p>
-        //     <p className="pt-4 w-3/4 text-sm">Title</p>
-        //     <input type="text" id="d2" name="d3" value={addC} onChange={(e)=>setAddC(e.target.value)} className="mt-2 border border-slate-300 rounded-sm p-2 w-4/5 h-8" placeholder="Enter Categorey Title" required></input>
-        //     <br />
-        //     <button className="bg-red-500 text-white md:w-16 text-sm md:h-7 rounded-sm border mt-4" onClick={()=>handleSave()}>Save</button>
-        //     <button className="bg-red-500 text-white ml-2 md:w-16 text-sm md:h-7 rounded-sm border mt-4" onClick={(cat)=>{setCat(0)}}>Close</button>
-        // </div>:
-        // <div className="p-4 lg:pl-44 sm:pl-32 pl-8  w-1/2 border-slate-300 border bg-white absolute rounded-sm lg:left-96 md:left-64 sm:left-44 left-28">
-        //     <p className="text-xl w-3/4">Add New Bookmark</p>
-        //     <p className="pt-4 w-3/4">Title *</p>
-        //     <input type="text" id="d1" name="dr" value={addD} onChange={(e)=>setAddD(e.target.value)} className="mt-4 border border-slate-300 rounded-sm p-2 w-3/4 h-8" placeholder="Bookmark Title" required></input>
-        //     <p className="w-3/4 mt-4">Category</p>
-        //     <select required className="w-3/4 h-8 border-slate-400 border mt-4">
-        //         {items.map((item, index) => (
-        //             <option key={index} value={item}>{item}</option>
-        //         ))}
-        //     </select>
-        //     <p className="w-3/4 text-slate-700 font-bold text-sm mt-4 cursor-pointer" onClick={()=>setCat(1)}>Add New Category</p>
-        //     <p className="w-3/4 mt-4">Link *</p>
-        //     <div className="h-8 rounded-sm border w-3/4 bg-slate-300 mt-4">
-
-        //     </div>
-        //     <p className="w-3/4 mt-4">Description</p>
-        //     <textarea name="" id="" placeholder="Type something" className="p-2 w-3/4 mb-2 mt-4 border border-slate-300 rounded-sm"></textarea>
-        //     <div>
-        //         <button className="bg-red-400 text-white sm:w-20 h-8 mt-4">Save</button>
-        //         <button className="bg-red-400 text-white ml-2 sm:w-20 h-8 mt-4">Close</button>
-        //     </div>
-        // </div>
         <Modal
           isOpen={modalState}
           onClose={() => {

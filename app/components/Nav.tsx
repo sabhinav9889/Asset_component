@@ -149,16 +149,11 @@ const NavBar = () => {
         </div>
         <div className="flex absolute lg:left-3/4">
           <div className="flex p-4 pt-2.5">
-            {/* {(turn===6)?<div className="w-10 h-10 p-2 text-slate-300">
-              <FontAwesomeIcon icon={faLightbulb} size="lg" />
-            </div>: */}
-            {/* onClick={()=>setTurn(6)} */}
             <div className="w-10 h-10 p-2 text-red-500 cursor-pointer">
               <Tooltip content={"Inspired"}>
                 <FontAwesomeIcon icon={faLightbulb} size="lg" />
               </Tooltip>
             </div>
-            {/* // } */}
           </div>
           <div className="flex p-4 pt-2.5">
               <div

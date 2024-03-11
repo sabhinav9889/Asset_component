@@ -64,7 +64,6 @@ const Notes = () =>{
         setLis((prev)=> [...prev, {"date" : dateAndTime, "content" : content}] );
         setCont(""); 
     }
-    // relative sm:left-3/4 xl:ml-44 lg:ml-28 left-0 mb-2
     return(
         <div className="p-4 border-drop-shadow-xl border w-4/5 absolute xl:left-32 sm:left-32 left-12 mt-44 xl:mt-28" >
             <h1 className="p-4">Post a Note</h1>
@@ -106,7 +105,4 @@ const Notes = () =>{
     )
 }
 
-
-{/* <div className="relative xl:left-3/4 p-2 w-20 flex text-slate-500">
-</div> */}
 export default Notes;
