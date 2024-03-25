@@ -29,12 +29,12 @@ const NavBar = () => {
   const notes = 0;
   const relCommunities = 0;
   const [turn, setTurn] = useState(0);
-  const { popup, setPopup } = useContext(messageData);
+  const [ popup, setPopup ] = useState(0);
   return (
     <div className="">
       <div className="lg:flex sm:pl-4 p-4 w-4/5 absolute sm:left-32 left-12 pl-1 h-44 xl:h-24">
         <div className="flex h-16">
-          <div className="flex sm:p-4 pt-6 p-2">
+          <div className="sm:flex p-4 sm:pt-6">
             {!(turn === 0) ? (
               <Tooltip content={"Intent of This Asset"}>
                 <div
@@ -52,7 +52,7 @@ const NavBar = () => {
               </Tooltip>
             )}
           </div>
-          <div className="flex sm:p-4 pt-6">
+          <div className="sm:flex p-4 sm:pt-6">
             {turn === 1 ? (
               <Tooltip content={"Iterations"}>
                 <div className="sm:w-8 sm:h-8 sm:pt-1 sm:pl-2.5 w-6 h-4 pb-6 pl-1.5 rounded-full border-2 border-solid bg-white text-red-500">
@@ -73,7 +73,7 @@ const NavBar = () => {
               ({iterations})
             </p>
           </div>
-          <div className="flex sm:p-4 pt-6">
+          <div className="sm:flex p-4 sm:pt-6">
             {turn === 2 ? (
               <Tooltip content={"Related Assets"}>
                 <div className="sm:w-8 sm:h-8 sm:pl-2.5 sm:pt-1 w-6 h-4 pb-6 pl-1.5 rounded-full border-2 border-solid bg-white text-red-500">
@@ -94,7 +94,7 @@ const NavBar = () => {
               ({assetCount})
             </p>
           </div>
-          <div className="flex sm:p-4 pt-6">
+          <div className="sm:flex p-4 sm:pt-6">
             {turn === 3 ? (
               <Tooltip content={"Related Communities"}>
                 <div className="w-6 h-4 pb-6 pl-1 sm:w-8 sm:h-8 sm:pl-2 sm:pt-1 rounded-full border-2 border-solid bg-white text-red-500">
@@ -116,7 +116,7 @@ const NavBar = () => {
               ({relCommunities})
             </p>
           </div>
-          <div className="flex sm:p-4 pt-6">
+          <div className="sm:flex p-4 sm:pt-6">
             {turn === 4 ? (
               <Tooltip content={"Notes"}>
                 <div className="w-6 h-4 pb-6 pl-1.5 sm:w-8 sm:h-8 sm:pl-2 sm:pt-1 rounded-full border-2 border-solid bg-white text-red-500">
@@ -135,7 +135,7 @@ const NavBar = () => {
             )}
             <p className="text-sm sm:text-lg ml-1/2 sm:ml-2 text-red-500">({notes})</p>
           </div>
-          <div className="flex sm:p-4 pt-6">
+          <div className="sm:flex p-4 sm:pt-6">
             {/* {(turn===5)?<div className="w-6 h-6 pl-1 sm:w-8 sm:h-8 sm:pl-2 sm:pt-1 rounded-full border-2 border-solid bg-white text-red-500">
               <FontAwesomeIcon icon={faUsers} size="sm" />
             </div>: */}
@@ -148,14 +148,14 @@ const NavBar = () => {
           </div>
         </div>
         <div className="flex absolute lg:left-3/4">
-          <div className="flex p-4 pt-2.5">
+          <div className="flex p-4 sm:pt-2.5">
             <div className="w-10 h-10 p-2 text-red-500 cursor-pointer">
               <Tooltip content={"Inspired"}>
                 <FontAwesomeIcon icon={faLightbulb} size="lg" />
               </Tooltip>
             </div>
           </div>
-          <div className="flex p-4 pt-2.5">
+          <div className="flex p-4 sm:pt-2.5">
               <div
                 className="w-10 h-10 p-2 text-red-500 cursor-pointer"
                 onClick={() => setPopup(1)}
@@ -165,7 +165,7 @@ const NavBar = () => {
                 </Tooltip>
               </div>
           </div>
-          <div className="flex p-4 pt-3.5">
+          <div className="sm:flex p-4 sm:pt-4 pt-5">
               <Tooltip content={"Share the asset"}>
                 <div
                   className="w-7 h-7 pl-1.5 sm:w-8 sm:h-8 sm:pl-2 sm:pt-1 pt-1 cursor-pointer rounded-full text-white bg-red-500"
@@ -181,8 +181,8 @@ const NavBar = () => {
       {turn === 0 && <Intent />}
       {turn === 2 && <Asset assetCount={assetCount} />}
       {turn === 3 && <Comm comm={relCommunities} />}
-      {popup === 1 && <BookMark />}
-      {popup === 2 && <Share />}
+      {popup === 1 && <BookMark popup = {popup} setPopup = {setPopup} />}
+      {popup === 2 && <Share popup = {popup} setPopup = {setPopup}/>}
       {turn === 4 && <Notes />}
       {turn === 1 && <Iteration iterations={iterations} />}
     </div>

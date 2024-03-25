@@ -7,10 +7,9 @@ import { useState } from "react";
 import { Modal, Button, Text, ActionIcon } from "rizzui";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 
-const shareAsset = () => {
+const shareAsset = ({popup, setPopup}) => {
   const url = "http://localhost";
   const [modalState, setModalState] = useState(true);
-  const { popup, setPopup } = useContext(messageData);
   return (
     <>
       <Modal

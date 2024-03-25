@@ -5,10 +5,7 @@ import {
   Modal,
   Button,
   Text,
-  ActionIcon,
-  Input,
-  Password,
-  Checkbox,
+  ActionIcon
 } from "rizzui";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 interface realtedAssetProp {

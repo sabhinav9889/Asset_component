@@ -4,13 +4,12 @@ import { XMarkIcon } from "@heroicons/react/20/solid";
 import { messageData } from "../Context";
 import { useContext } from "react";
 
-const BookMark = () => {
+const BookMark = ({popup, setPopup}) => {
   const [items, setItems] = useState<string[]>([]);
   const [cat, setCat] = useState(0);
   const [addC, setAddC] = useState("");
   const [modalState, setModalState] = useState(true);
   const [modalState2, setModalState2] = useState(true);
-  const { popup, setPopup } = useContext(messageData);
   function handleSave() {
     setItems([...items, addC]);
     setAddC("");
